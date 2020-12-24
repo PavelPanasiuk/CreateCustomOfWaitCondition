@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -8,8 +6,8 @@ namespace CreateCustomOfWaitCondition
 {
     public class CustomDisplayMethod
     {
-
         //Method without explisit wait
+
         public bool FirstTryIsElementDisplay(string webpath, IWebDriver driver, string urlForSearchElement)
         {
             bool result = false;
@@ -26,7 +24,8 @@ namespace CreateCustomOfWaitCondition
             return result;
         }
 
-        //Method with explicit wait.
+        //Method with explicit wait. I consider that this method will be better.
+
         public bool SecondTryIsElementDisplay(string webpath, IWebDriver driver, string urlForSearchElement)
         {
             bool result = false;
@@ -38,7 +37,7 @@ namespace CreateCustomOfWaitCondition
                 IWebElement webElement = wait.Until<IWebElement>((d) => d.FindElement(By.XPath(webpath)));
                 result = webElement.Displayed;
             }
-            catch (Exception ex)
+            catch (NoSuchElementException ex)
             {
                 Console.WriteLine(ex.Message);
             }

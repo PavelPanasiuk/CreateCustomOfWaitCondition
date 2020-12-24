@@ -28,13 +28,13 @@ namespace CreateCustomOfWaitCondition
             var result = _display.FirstTryIsElementDisplay(xPath, _chromeDriver, _chromeDriver.Url);
             if (result == false)
             {
-                throw new Exception("This element didn't display.");
+                throw new Exception("This element didn't display.");                
             }
         }
 
         [Test]
         public void TestingEnableMethod()
-        {
+        {            
             string xPath = "//input[@class='gNO89b'][1]";
             _chromeDriver.FindElement(By.XPath(xPath));
 
