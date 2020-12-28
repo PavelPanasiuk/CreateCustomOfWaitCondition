@@ -25,7 +25,6 @@ namespace CreateCustomOfWaitCondition
         }
 
         //Method with explicit wait. I consider that this method will be better.
-
         public bool SecondTryIsElementDisplay(string webpath, IWebDriver driver, string urlForSearchElement)
         {
             bool result = false;
